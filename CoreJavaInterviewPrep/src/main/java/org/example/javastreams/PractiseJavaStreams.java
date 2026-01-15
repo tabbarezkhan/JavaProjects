@@ -41,7 +41,6 @@ public class PractiseJavaStreams {
         System.out.println("ReversedOrder::"+numbersToReverse);
 
         /****String => number of unique characters in a String ********/
-
         String name =  new String("Tabbarez");
         Set<Character> unique = new HashSet<>();
         for (char c: name.toCharArray())
@@ -58,13 +57,19 @@ public class PractiseJavaStreams {
         }
         System.out.println(unique2); //[T, a, b, r, e, z]
 
-        //take the same String and add it to a Arraylist and see if order is mantained
+
+
+        //take the same String and add it to a Arraylist and see if order is maintained
         ArrayList<Character> charArrayList = new ArrayList<>();
         for (char c: name.toCharArray())
         {
             charArrayList.add(c);
         }
         System.out.println(charArrayList); //take duplicate --> [T, a, b, b, a, r, e, z]
+        //Convert the String to upper case
+        System.out.println("Upper Case::"+name.toUpperCase());
+        //using Stream
+        System.out.println("Character upper case::"+charArrayList.stream().map(Character::toUpperCase).collect(Collectors.toList()));
 
         //using this trying to find unique characters using Stream
         List<Character> uniqueList = charArrayList.stream().distinct().collect(Collectors.toList());
