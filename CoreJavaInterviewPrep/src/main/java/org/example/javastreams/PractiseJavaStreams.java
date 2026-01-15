@@ -30,12 +30,10 @@ public class PractiseJavaStreams {
 
         String name =  new String("Tabbarez");
         Set<Character> unique = new HashSet<>();
-
         for (char c: name.toCharArray())
         {
             unique.add(c);
         }
-
         System.out.println(unique); // here output can be in any order like = [a, b, r, T, e, z]
 
         //use LinkedHashset and you will get order
@@ -54,12 +52,17 @@ public class PractiseJavaStreams {
         }
         System.out.println(charArrayList); //take duplicate --> [T, a, b, b, a, r, e, z]
 
+        //using this trying to find unique characters using Stream
+        List<Character> uniqueList = charArrayList.stream().distinct().collect(Collectors.toList());
+        System.out.println("I used Stream::"+uniqueList);
+
         LinkedList<Character> characterLinkedList = new LinkedList<>();
         for (char c: name.toCharArray())
         {
             characterLinkedList.add(c);
         }
         System.out.println(characterLinkedList);
+
 
     }
 }
