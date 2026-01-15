@@ -12,19 +12,27 @@ public class PractiseJavaStreams {
 
         //increase each number by 1
         List resultNumber = numbers.stream().map(n->n+1).collect(Collectors.toList());
-        System.out.println(resultNumber);
+        System.out.println("increase each number by 1"+resultNumber); // ==> [2, 3, 4, 5, 6, 7]
 
         //find the number bigger than 2
-        List numberBigthantwo=numbers.stream().filter(n-> n>2).collect(Collectors.toList());
-        System.out.println(numberBigthantwo);
+        List numberBigthantwo=numbers.stream().map(n-> n>2).collect(Collectors.toList());
+        System.out.println("find the number bigger than 2"+numberBigthantwo); // ==>[false, false, true, true, true, true]
+        // in above two examples I used to map. So map will take every element and it will transform it into something
+        //else
+
+        System.out.println("find the number bigger than 2"+numbers.stream().
+                        filter(n-> n>2).collect(Collectors.toList())); //==>[3, 4, 5, 6]
+        //Here I am using filter which will keep or discard the elements which are satisfying the condition
 
         //get maximum number from the list
         int i= numbers.stream().max(Integer::compareTo).get();
+        numbers.stream().max(a,b-->a>b)
         System.out.println(i);
 
         //reverse the order
         List<Integer> sortedNumbers = randomNumbers.stream().sorted().collect(Collectors.toList());
         System.out.println(sortedNumbers);
+
 
         /****String => number of unique characters in a String ********/
 
