@@ -26,13 +26,19 @@ public class PractiseJavaStreams {
 
         //get maximum number from the list
         int i= numbers.stream().max(Integer::compareTo).get();
-        numbers.stream().max(a,b-->a>b)
-        System.out.println(i);
+        System.out.println("Maximum number::"+ i);
 
-        //reverse the order
+        //get minimum number from the list
+        int min= numbers.stream().min(Integer::compareTo).get();
+        System.out.println("minimum number::"+ min);
+
+        //Sorted
         List<Integer> sortedNumbers = randomNumbers.stream().sorted().collect(Collectors.toList());
         System.out.println(sortedNumbers);
 
+        //once you sort, how can you reverse the order
+        List<Integer> numbersToReverse =  sortedNumbers.reversed();
+        System.out.println("ReversedOrder::"+numbersToReverse);
 
         /****String => number of unique characters in a String ********/
 
