@@ -22,5 +22,6 @@ public class Main {
         System.out.println(cList.stream().
                 map(Character::toUpperCase).collect(Collectors.toList()));
         System.out.println("Hello, World!"+set);
+        System.out.println("Nie");
     }
 }
