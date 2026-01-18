@@ -1,9 +1,6 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -23,5 +20,35 @@ public class Main {
                 map(Character::toUpperCase).collect(Collectors.toList()));
         System.out.println("Hello, World!"+set);
         System.out.println("Nice");
+
+        String name1= "Millionair";
+        List<Character> name1Char = new ArrayList<>();
+        for(char c: name1.toCharArray())
+        {
+            name1Char.add(c);
+        }
+        System.out.println(name1.toUpperCase());
+        System.out.println("New Name Char::"+name1Char);
+
+        List<Integer> numbers = Arrays.asList(1,2,3,4,5,6);
+        List<Integer> numBiggerThanOne = numbers.stream().filter(n->n>1).collect(Collectors.toList());
+        System.out.println("Numbers bigger than 1::"+numBiggerThanOne);
+
+        List<Integer> addTwoInEachDigitList = numbers.stream().map(n->n+2).collect(Collectors.toList());
+        System.out.println("Plus Two::"+addTwoInEachDigitList);
+
+        List<Integer> randomNumbers = Arrays.asList(10,10,9,5,4,6,2,3,5,5,5,5);
+        //randomNumbers.stream().map().collect(Collectors.toSet());
+        HashSet<Integer> numberSet = new HashSet<>();
+        for (int i = 0; i < randomNumbers.size(); i++) {
+            numberSet.add(randomNumbers.get(i));
+        }
+        System.out.println("Using HashSet::"+numberSet);
+
+        LinkedHashSet<Integer> linkedHashSet = new LinkedHashSet<>();
+        for (int i = 0; i < randomNumbers.size(); i++) {
+            linkedHashSet.add(randomNumbers.get(i));
+        }
+        System.out.println("Using LinkedHashSet::"+linkedHashSet);
     }
 }
